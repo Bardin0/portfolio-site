@@ -30,10 +30,6 @@ nav{
     gap: 2rem;
 }
 
-img{
-    max-width: 35px;
-}
-
 .nav-links{
     list-style: none;
     display: flex;
@@ -70,7 +66,14 @@ img{
 }
 
 .title-card{
-    display:inline-block;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-pic{
+    max-width: 175px;
+    border-radius: 50%;
 }
 
 .personal-links-imgs{
@@ -79,6 +82,20 @@ img{
     list-style: none;
 }
 
-.personal-links-imgs img{
-    box-shadow: 0 5px 15px rgba(145, 92, 182, .4);
+.personal-links{
+    margin-top: 8px;
 }
+
+.personal-links-imgs img{
+    max-width: 35px;
+    box-shadow: 0 5px 15px rgba(145, 92, 182, .4);
+    background: white;
+    border-radius: 20%;
+}
+
+.resume-link {
+    display: flex;
+    align-items: center; /* vertically center the content */
+    justify-content: center;
+    border: 1px solid black; /* box border */
+  }
