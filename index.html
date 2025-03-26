@@ -8,14 +8,16 @@
 </head>
 <body>
 
-    <nav>
-        <ul class="nav-links">
-            <li class="link"><a href="#tech">Tech</a></li>
-            <li class="link"><a href="#resume">Resume</a></li>
-            <li class="link"><a href="#projects">Projects</a></li>
-            <li class="link"><a href="#contact-me">Contact Me</a></li>
-        </ul>
-    </nav>
+    <div class="nav-bar">
+        <nav>
+            <ul class="nav-links">
+                <li class="link"><a href="#tech">Tech</a></li>
+                <li class="link"><a href="#projects">Projects</a></li>
+                <li class="link"><a href="#resume">Resume</a></li>
+                <li class="link"><a href="#contact-me">Contact Me</a></li>
+            </ul>
+        </nav>
+    </div>
 
     <div class="title-card">
         <div class="text-wrapper">
@@ -85,7 +87,7 @@
                 <span class="language-name">MySQL</span>
             </div>
             <div class="language-card">
-                <img src="images/maven.png" class="language-logo" id="github-img">
+                <img src="images/maven-svgrepo-com.svg" class="language-logo" id="github-img">
                 <span class="language-name">Maven</span>
             </div>
             <div class="language-card">
@@ -104,7 +106,9 @@
         <hr>
 
         <h1 id="resume">Resume</h1>
-        <embed src="images/resume_blank.pdf" type="application/pdf" height="600" width="750">
+        <div class="resume-wrapper">
+            <embed src="images/resume.pdf" type="application/pdf">
+        </div>
         <hr>
         
         <h1 id="contact-me">Contact Me</h1>

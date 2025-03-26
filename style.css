@@ -22,11 +22,10 @@ body{
 
 nav{
     max-width: 1200px;
-    margin: auto;
     padding: 2rem 1rem;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     gap: 2rem;
     margin-bottom: 30px;
 }
@@ -39,6 +38,13 @@ hr {
     background-color: #3a3a42;
     margin: 20px 4px 20px 4px;
     height: 1px;
+}
+
+.nav-bar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid red;
 }
 
 .nav-links{
@@ -102,7 +108,8 @@ hr {
 }
 
 .personal-links-imgs img{
-    max-width: 35px;
+    min-width: 35px;
+    max-height: 35px;
     box-shadow: 0 5px 15px rgba(145, 92, 182, .4);
     background: white;
     border-radius: 20%;
@@ -143,4 +150,60 @@ hr {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px,1fr));
     gap: 10px;
+}
+
+.resume-wrapper{
+    position: relative;
+    width: 100%; /* Take full width of the parent */
+    padding-top: 56.25%; /* Maintain a 4:3 aspect ratio (adjust as needed) */
+    overflow: hidden;
+}
+
+.resume-wrapper embed{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none; /* Remove border around the iframe */
+}
+
+@media (max-width: 768px){
+
+    nav{
+        display: none;
+    }
+
+    embed{
+        height: 300px;
+        width: 100%;
+    }
+
+    .title-card{
+        position: relative;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .main{
+        margin: 0;
+        padding:8px;
+        border: 1px solid red;
+    }
+
+    .card-wrapper{
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+
+    .text-wrapper{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .title-card img{
+        width: 50%;
+    }
+
 }
