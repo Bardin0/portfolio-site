@@ -13,7 +13,6 @@
             <ul class="nav-links">
                 <li class="link"><a href="#tech">Tech</a></li>
                 <li class="link"><a href="#projects">Projects</a></li>
-                <li class="link"><a href="#resume">Resume</a></li>
                 <li class="link"><a href="#contact-me">Contact Me</a></li>
             </ul>
         </nav>
@@ -104,16 +103,21 @@
         <h1 id="projects">Projects</h1>
         <p>My projects</p>
         <hr>
-
-        <h1 id="resume">Resume</h1>
-        <div class="resume-wrapper">
-            <embed src="images/resume.pdf" type="application/pdf">
-        </div>
-        <hr>
         
         <h1 id="contact-me">Contact Me</h1>
+        <form id="emailForm" class="form">
+            <input type="email" id="email" name="email" class="input-box" placeholder="Enter your email" required>
+          
+            <textarea id="message" name="message" class="input-box textarea-box" placeholder="Type your message" required></textarea>
+          
+            <button type="submit" class="submit-btn">Send</button>
+        </form>
 
     </div>
+
+    <footer>
+        <hr>
+    </footer>
     
 </body>
 </html>

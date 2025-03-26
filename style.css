@@ -9,6 +9,7 @@
 
 html {
     scroll-behavior: smooth;
+    cursor: crosshair;
 }
 
 a {
@@ -40,11 +41,15 @@ hr {
     height: 1px;
 }
 
+footer{
+    height: 200px;
+    width: auto;
+}
+
 .nav-bar{
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid red;
 }
 
 .nav-links{
@@ -152,21 +157,55 @@ hr {
     gap: 10px;
 }
 
-.resume-wrapper{
-    position: relative;
-    width: 100%; /* Take full width of the parent */
-    padding-top: 56.25%; /* Maintain a 4:3 aspect ratio (adjust as needed) */
-    overflow: hidden;
-}
-
-.resume-wrapper embed{
-    position: absolute;
-    top: 0;
-    left: 0;
+/* Styling the form container */
+.form {
     width: 100%;
-    height: 100%;
-    border: none; /* Remove border around the iframe */
-}
+    margin: 0 auto; /* Centers the form */
+    border-radius: 10px; /* Smooth corners */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Input and textarea boxes */
+  .input-box {
+    background-color: #343437;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px; /* Smooth corners for inputs */
+    font-size: 16px; /* Readable font size */
+  }
+  
+  .textarea-box {
+    min-height: 150px; /* Makes the textarea larger */
+    resize: none;
+  }
+  
+  /* Placeholder text styling */
+  .input-box::placeholder {
+    color: #aaa;
+    font-style: italic;
+  }
+  
+  /* Submit button styling */
+  .submit-btn {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px; /* Smooth corners */
+    color: white; /* Text color */
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #343437;
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+    max-width: 400px;
+  }
+  
+  .submit-btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
 
 @media (max-width: 768px){
 
@@ -174,21 +213,20 @@ hr {
         display: none;
     }
 
-    embed{
-        height: 300px;
-        width: 100%;
+    h1 {
+        text-align: center;
     }
 
     .title-card{
         position: relative;
         align-items: center;
         justify-content: center;
+        margin: 120px 0 80px 0;
     }
 
     .main{
         margin: 0;
-        padding:8px;
-        border: 1px solid red;
+        padding:24px;
     }
 
     .card-wrapper{
