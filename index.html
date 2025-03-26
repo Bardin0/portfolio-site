@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <div class="nav-bar">
         <nav>
             <ul class="nav-links">
@@ -101,7 +100,19 @@
 
         
         <h1 id="projects">Projects</h1>
-        <p>My projects</p>
+        <div class="project-card">
+            <a href="https://github.com/Bardin0/Tomb-of-The-Ancient-Kings" class="project-title">Tomb Of The Ancienct Kings</a>
+            <hr class="project-line">
+            <div class="list-wrapper">
+                <img src="images/Ancient-Kings.png" class="project-image">
+                <ul>
+                    <li>Turn-based rogue-lite game in Python with procedural dungeon generation</li>
+                    <li>Optimized procedural map generation and pathfinding calculations using NumPy for efficient operations and
+                        performance improvements.</li>
+                    <li>Utilized object-oriented programming design patterns to maintain a scalable codebase</li>
+                </ul>
+            </div>
+        </div>
         <hr>
         
         <h1 id="contact-me">Contact Me</h1>
@@ -115,9 +126,15 @@
 
     </div>
 
+    <div id="overlay" class="overlay">
+        <button class="close-btn">X</button>
+        <img src="" alt="Full-Screen Image" class="full-screen-image">
+      </div>
+
     <footer>
         <hr>
     </footer>
     
+    <script src="script.js" defer></script>
 </body>
 </html>
