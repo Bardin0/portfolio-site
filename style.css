@@ -9,7 +9,6 @@
 
 html {
     scroll-behavior: smooth;
-    cursor: crosshair;
 }
 
 a {
@@ -134,6 +133,7 @@ footer{
     background-color: #282424;
     padding: 12px;
     border-radius: 8px;
+    margin: 8px;
 }
 
 .list-wrapper{
@@ -322,6 +322,12 @@ footer{
 
     .title-card img{
         width: 50%;
+    }
+}
+@media (min-width:769px) and (max-width: 1175px){
+
+    .list-wrapper{
+        flex-direction: column;
     }
 
 }
