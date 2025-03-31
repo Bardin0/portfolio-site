@@ -128,9 +128,10 @@ footer{
     padding-bottom: 25px;
 }
 
+/* ------------------------------------ PROJECT CARD STYLING ------------------------------------- */
 .project-card{
     border: 1px solid #65656d;
-    background-color: #282424;
+    background-color: rgb(40 36 36);
     padding: 12px;
     border-radius: 8px;
     margin: 8px;
@@ -183,7 +184,8 @@ footer{
     padding: 8px;
     border-radius: 8px;
     min-width: 32px;
-    background-color: #282424;
+    background-color: rgb(40 36 36);
+    box-shadow: ();
 }
 
 .language-logo {
@@ -203,7 +205,7 @@ footer{
     gap: 10px;
 }
 
-/* Styling the form container */
+/* ----------------------------- CONTACT FORM STYLING ------------------------------ */
 .form {
     width: 100%;
     margin: 0 auto; /* Centers the form */
@@ -253,7 +255,7 @@ footer{
     background-color: #0056b3; /* Darker blue on hover */
   }
 
-  /* Overlay Container */
+  /* --------------------------------- FULL SCREEN IMAGES STYLING -------------------------- */
 .overlay {
     display: none; /* Hidden by default */
     position: fixed;
@@ -286,6 +288,29 @@ footer{
     border-radius: 5px;
     z-index: 1001; /* Ensures it is above the overlay */
   }
+
+/* -------------------------------- POP UP CONTAINER STYLING -------------------------------- */
+
+  /* Popup container (background overlay) */
+.popup {
+    position: fixed;
+    display: flex;
+    bottom: 0;
+    left:50%;
+    margin: 20px;
+    transform: translateX(-50%);
+    max-width: 300px;
+    min-height:100px;
+    background-color: rgb(40 36 36); /* semi-transparent background */
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    box-shadow: 0 5px 15px rgb(66, 64, 64);
+    text-align: center;
+}
+
+
+/* ------------------------------------------- MEDIA QUERIES ------------------------------------- */
 
 @media (max-width: 768px){
 
@@ -324,7 +349,7 @@ footer{
         width: 50%;
     }
 }
-@media (min-width:769px) and (max-width: 1175px){
+@media(max-width: 1175px){
 
     .list-wrapper{
         flex-direction: column;

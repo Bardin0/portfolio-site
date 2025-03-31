@@ -131,20 +131,26 @@
         
         <h1 id="contact-me">Contact Me</h1>
         <p style="padding: 8px;">Looking to get in touch? Feel free to send me a message here.</p>
-        <form id="emailForm" class="form">
-            <input type="email" id="email" name="email" class="input-box" placeholder="Enter your email" required>
-          
-            <textarea id="message" name="message" class="input-box textarea-box" placeholder="Type your message" required></textarea>
-          
-            <button type="submit" class="submit-btn">Send</button>
-        </form>
+        <form id="emailForm" action="https://api.web3forms.com/submit" class="form" method="POST">
 
+            <input type="hidden" name="access_key" value="4eb02994-5f33-42a1-88a1-d62e6379e824">
+
+            <input type="email" id="email" name="email" class="input-box" placeholder="Enter your email" required>
+            <textarea id="message" name="message" class="input-box textarea-box" placeholder="Type your message" required></textarea>
+            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+          
+            <button type="submit" id="submit-btn" class="submit-btn">Send</button>
+        </form>
     </div>
 
     <div id="overlay" class="overlay">
         <button class="close-btn">X</button>
         <img src="" alt="Full-Screen Image" class="full-screen-image">
       </div>
+
+      <div id="popup" class="popup">
+            <p>Please wait before sending another message.</p>
+    </div>
 
     <footer>
         <hr>
