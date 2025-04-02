@@ -41,7 +41,7 @@ hr {
 }
 
 footer{
-    height: 200px;
+    height: 300px;
     width: auto;
 }
 
@@ -87,7 +87,7 @@ footer{
     margin: 0 auto;
 }
 
-
+/* ----------------------------- TITLE CARD STYLING ---------------------------*/
 .title-card{
     display:flex;
     flex-direction: column;
@@ -114,9 +114,28 @@ footer{
 .personal-links-imgs img{
     min-width: 35px;
     max-height: 35px;
-    box-shadow: 0 5px 15px rgba(145, 92, 182, .4);
-    background: white;
+    background: rgb(68, 62, 62);
     border-radius: 20%;
+}
+
+#download{
+    background:none;
+}
+
+.resume-download{
+    display: flex;
+    background: rgb(68, 62, 62);
+    border-radius: 1cm;
+    padding: 8px;
+    padding-right: 15px;
+    justify-content: center;
+    align-items: center;
+    max-height: 35px;
+    transition: background-color 0.3s ease;
+}
+
+.resume-download:hover{
+    background-color: #0056b3;
 }
 
 .main{
@@ -186,6 +205,11 @@ footer{
     min-width: 32px;
     background-color: rgb(40 36 36);
     box-shadow: ();
+    transition: scale 0.5s ease;
+}
+
+.language-card:hover{
+    scale: 1.2;
 }
 
 .language-logo {
@@ -294,7 +318,10 @@ footer{
   /* Popup container (background overlay) */
 .popup {
     position: fixed;
+    border-radius: 5%;
     display: flex;
+    opacity: 0;
+    visibility: hidden;
     bottom: 0;
     left:50%;
     margin: 20px;
@@ -307,8 +334,13 @@ footer{
     z-index: 999;
     box-shadow: 0 5px 15px rgb(66, 64, 64);
     text-align: center;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s;
 }
 
+.popup.show {
+    opacity: 1;
+    visibility: visible;
+}
 
 /* ------------------------------------------- MEDIA QUERIES ------------------------------------- */
 

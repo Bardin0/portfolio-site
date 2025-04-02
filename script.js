@@ -4,6 +4,7 @@ const fullScreenImage = document.querySelector('.full-screen-image');
 const clickableImages = document.querySelectorAll('.project-image');
 const closeBtn = document.querySelector('.close-btn');
 const body = document.body; // Select the body element
+let active = false;
 
 // Show overlay and set the clicked image
 clickableImages.forEach((img) => {
@@ -27,51 +28,45 @@ document.addEventListener("DOMContentLoaded", function() {
 
       let formData = new FormData(this);
       let button = document.getElementById("submit-btn");
-      let popup = document.getElementById("popup");
-      let closePopupBtn = document.getElementById("close-popup");
+      let popup = document.querySelector(".popup");
 
-      if (button.disabled) {
-        // Show the popup if the button is already disabled (user tried to submit while waiting)
-        popup.style.display = "flex";
-        setTimeout(() => {
-          popup.style.display = "none";
-        }, 5000)
-        return; // Stop further execution, don't submit the form again
-    }
-
-      button.disabled = true;
       button.textContent = "Sending..."; // Change the text to indicate submission in progress
 
-      // try {
-      //     let response = await fetch("https://api.web3forms.com/submit", {
-      //         method: "POST",
-      //         body: formData
-      //     });
+      if (active){
+        popup.classList.add("show");
 
-      //     let result = await response.json();
-      //     console.log(result); // Log result to check the response structure
+        setTimeout(() => {
+          popup.classList.remove("show");
+        },4000);
 
-      //     // Change button text based on the success or failure of the submission
-      //     button.textContent = result.success ? "Message sent!" : "Error sending.";
-      // } catch (error) {
-      //     console.log(error.message); // Log error message if fetch fails
-      //     button.textContent = "Error occurred.";
-      // }
+        return;
+      }
+
+      try {
+          let response = await fetch("https://api.web3forms.com/submit", {
+              method: "POST",
+              body: formData
+          });
+
+          let result = await response.json();
+          console.log(result); // Log result to check the response structure
+
+          // Change button text based on the success or failure of the submission
+          button.textContent = result.success ? "Message sent!" : "Error sending.";
+      } catch (error) {
+          console.log(error.message); // Log error message if fetch fails
+          button.textContent = "Error occurred.";
+      }
 
       button.textContent = "Sent!"
-
+      active = true;
       // Reset the button text after 3 seconds
       setTimeout(() => {
           button.textContent = "Send";
       }, 3000);
 
       setTimeout(() => {
-        button.disabled = false;
-        popup.style.display = "none"; // Hide the popup
+        active = false;
       }, 10000);
   });
 });
-
-document.getElementById("close-popup").addEventListener("click", () => {
-  document.getElementById("close-popup").style.display = "none";
-})
